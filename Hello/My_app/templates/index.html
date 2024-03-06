@@ -1,41 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        table{
-            border-collapse: collapse;
-        }
-        table,tr,th{
-            border:1px solid #222;
-            padding: 10px;
-            margin:10px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Welcome</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non modi temporibus voluptatem optio, harum sed saepe deleniti commodi esse fugiat quis minima. Minima atque iste, pariatur voluptas cumque ex. Error voluptate earum unde, assumenda harum fugit saepe modi numquam fugiat ex ut consequuntur enim odit quis nemo eos, vel aliquam.</p>
-    {% comment 'Notes'  %}
-    {{users}}
-    {% endcomment %}
-    <table>
-        <tr>
-            <th>S.NO</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Eligibility</th>
-        </tr>
-        {% for user in users %}
-        <tr>
-            <td>{{forloop.counter}}</td>
-            <td>{{user.name}}</td>
-            <td>{{user.Age}}</td> 
-            <td>{% if user.Age >= 18 %} Yes {% else %} No {% endif %}</td>
-        </tr>
-        {% endfor %}
-    </table>
-</body>
-</html>
+{% extend 'base.html' %}
+{% block content %}
+<div class="container-fluid" style="margin-top:100px">
+    <div class="col-md-offset-3 col-md-6">
+    <h3 class="page-hader text-primary text-center">Upload Image</h3>
+    <form action="cd .." method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>Upload Files</label>
+            {{form.file}}
+        </div>
+        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+    </form>
+</div>
+</div>
+{% endblock %}
