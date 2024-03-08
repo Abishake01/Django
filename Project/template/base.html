@@ -2,4 +2,22 @@
 {% block title %} Second Page {% endblock %}
 {% block content %}
 <h1>Welcome to the Second Page</h1>
+<h1>{{var}}</h1>
+<h1>{{msg}}</h1>
+{{ani}}
+
+<ul>
+{% for ani in forest %}
+<li>{{ani}}</li>
+{% endfor %}
+</ul>
+{% if c %}
+<h1>
+{{a}}is greaatter than {{b}}
+</h1>
+{% else %}
+<h1>
+{{b}} is greaatter than {{a}}</h1>
+{% endif %}
+
 {% endblock %}
