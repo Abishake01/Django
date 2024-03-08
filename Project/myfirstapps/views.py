@@ -19,3 +19,5 @@ def sec(request):
         'c':c
     }
     return render(request,'base.html',context=dict)
+def image(request):
+    return render(request,'image.html')

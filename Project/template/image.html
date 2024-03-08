@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Image page {% endblock %}
+{% block content %}
+<div>
+    <div class="row">
+        <div class="col md-6">
+            <img src="{% static 'alogo.jpg' %}" class="img-fluid" alt="Avenger">
+        </div>
+    </div>
+</div>
+<h1>Image page</h1>
+<h1>{{var}}</h1>
+<h1>{{msg}}</h1>
+{{ani}}
+{% endblock %}
