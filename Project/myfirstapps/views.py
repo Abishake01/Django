@@ -19,5 +19,15 @@ def sec(request):
         'c':c
     }
     return render(request,'base.html',context=dict)
-def image(request):
-    return render(request,'image.html')
+def image(request,imagename):
+    myimage=str(imagename);
+    myimage=myimage.lower();
+    print(myimage)
+    if myimage=='django':
+        var=True
+    elif myimage=='python':
+        var=False
+    dic={
+        'var':var
+    }
+    return render(request,'image.html',context=dic)

@@ -2,11 +2,17 @@
 {% load static %}
 {% block title %}Image page {% endblock %}
 {% block content %}
-<div>
+<div class="container-fluid">
     <div class="row">
-        <div class="col md-6">
-            <img src="{% static 'alogo.jpg' %}" class="img-fluid" alt="Avenger">
+        {% if var %}
+        <div class="col-6">
+            <img src="{% static 'django.png' %}" class="img-fluid" alt="Avenger">
         </div>
+        {% else  %}
+        <div class="col-6">
+            <img src="{% static 'python.webp' %}" class="img-fluid" alt="Avenger">
+        </div>
+        {% endif %}
     </div>
 </div>
 <h1>Image page</h1>
