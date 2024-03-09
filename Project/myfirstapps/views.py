@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import JsonResponse
 
 def user(request):
     return render(request,'index.html')
@@ -31,3 +32,10 @@ def image(request,imagename):
         'var':var
     }
     return render(request,'image.html',context=dic)
+def submitform(request):
+    disk={
+       'a1':request.Get('Mytext'),
+        'a2':request.Get('textarea'),
+        'method':request.method
+              }
+    return JsonResponse(disk)
