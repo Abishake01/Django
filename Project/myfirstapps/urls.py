@@ -5,5 +5,5 @@ urlpatterns = [
     path ('first',views.user,name="firstpage"),
     path('second',views.sec,name='Secondpage'),
     path('image/<str:imagename>',views.image,name='My image Page'),
-    path('form',views.submitform,name='submitform')
+    path('submitform',views.submitform,name='submitform')
 ]

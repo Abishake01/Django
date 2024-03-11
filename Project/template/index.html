@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}
-    <title>FirstPage</title>
-    {% endblock %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}
+  <title>FirstPage</title>
+  {% endblock %}
 </head>
+
 <body>
   {% block content %}
-    <h1>Welcome To the First Page</h1>
-    {% endblock %}
-    
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <h1>Welcome To the First Page</h1>
+  {% endblock %}
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -60,6 +63,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3">
+        {% csrf_token %}
         <form method="GET" action="{% url 'submitform' %}">
           <div class="form-group" style="text-align: center;">
             <label for="Mytext">Mytext</label><br>
@@ -67,14 +71,17 @@
           </div>
           <div class="form-group" style="margin: 10px; text-align: center;">
             <label for="Mytextarea">MytextArea</label><br>
-            <textarea type="textarea" name="Mytextarea" id="Mytextarea" class="form-control" rows="3"></textarea>
+            <textarea name="Mytextarea" id="Mytextarea" class="form-control" rows="3"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">submit</button>
+          <div class="form-group" style="text-align: center;">
+            <button type="submit" class="btn btn-primary">submit</button>
+          </div>
         </form>
 
       </div>
     </div>
   </div>
-    
+
 </body>
+
 </html>
