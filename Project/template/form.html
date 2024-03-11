@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Form page{% endblock %}
+{% block content %}
+<h1>Welcome to the Form Page</h1>
+<form>
+    {{form.as_p}} <!-- as_p means as the paragraph...as_table means table view as_ul means unorder list bullet marks -->
+
+</form>
+{% endblock %}

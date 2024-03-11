@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import json
 from django.http import JsonResponse
+from .form import *
 
 def user(request):
     return render(request,'index.html')
@@ -40,3 +40,12 @@ def submitform(request):
         'method':request.method
      }
     return JsonResponse(disk)
+def form(request):
+    if request.method =='POST':
+        pass
+    elif request.method =='GET':
+        feed= Feedback()
+        mydic={
+            'form':feed
+        }
+        return render(request,'form.html',context=mydic)
