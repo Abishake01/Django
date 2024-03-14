@@ -62,3 +62,5 @@ def form(request):
             'form':feed
         }
         return render(request,'form.html',context=mydic)
+def photo(request):
+    return render(request,'photo.html')
