@@ -42,7 +42,20 @@ def submitform(request):
     return JsonResponse(disk)
 def form(request):
     if request.method =='POST':
-        pass
+        feed=Feedback(request.POST)
+        if feed.is_valid():
+            title=request.POST['title']
+            subject=request.POST['subject']
+            print(title)
+            print(subject)
+            new=str("Form Submitted" + str(request.method))
+            return HttpResponse(new)
+        else:
+            mydic={
+            'form':feed
+        }
+        return render(request,'form.html',context=mydic)
+            
     elif request.method =='GET':
         feed= Feedback()
         mydic={
