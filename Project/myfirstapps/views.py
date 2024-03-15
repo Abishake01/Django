@@ -46,16 +46,18 @@ def form(request):
         if feed.is_valid():
             title=request.POST['title']
             subject=request.POST['subject']
-            print(title)
-            print(subject)
-            new=str("Form Submitted" + str(request.method))
-            return HttpResponse(new)
-        else:
-            mydic={
-            'form':feed
-        }
-        return render(request,'form.html',context=mydic)
-            
+            mydir={
+                'form':Feedback()
+            }
+            if title != title.upper():
+                mydir['error']=True
+                mydir['errormsg']='Title Should be in Capital Letter'
+                return render(request,'form.html',context=mydir)
+            else:
+                mydir['success']=True
+                mydir['successmsg']='Form Submitted'
+                return render(request,'form.html',context=mydir)
+           
     elif request.method =='GET':
         feed= Feedback()
         mydic={
