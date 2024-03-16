@@ -19,7 +19,7 @@
 <form method="POST">
     <p class="text-muted">Note *: Title should be in Captial Letter</p>
     {% csrf_token %}
-    {{form.as_ul}} <!-- as_p  means as the paragraph...as_table means table view as_ul means unorder list bullet marks -->
+    {{form.as_ul}} <!-- as_p  means as the paragraph... as_table means table view as_ul means unorder list bullet marks -->
     <button type="submit" class="btn btn-primary" style="margin:1 rem 10px;">submit</button>
 </form>
 
