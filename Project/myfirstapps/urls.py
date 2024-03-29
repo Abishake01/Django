@@ -9,4 +9,5 @@ urlpatterns = [
     path('form',views.form,name='form'),
     path('photo',views.photo,name="Photos"),
     
+    
 ]
