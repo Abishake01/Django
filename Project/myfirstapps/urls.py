@@ -8,6 +8,6 @@ urlpatterns = [
     path('submitform',views.submitform,name='submitform'),
     path('form',views.form,name='form'),
     path('photo',views.photo,name="Photos"),
-    
+      
     
 ]
